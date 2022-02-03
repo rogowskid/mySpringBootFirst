@@ -2,9 +2,12 @@ package pl.rogowski.springfirst.Student;
 
 import lombok.Data;
 
+import java.util.LinkedList;
 import java.util.Random;
+import java.util.function.UnaryOperator;
+
 @Data
-public class Student {
+public class Student extends LinkedList<Student> {
 
     private String[] nameRandom = {"Asia", "Kasia", "Daniel", "Patryk", "Michal"};
     private String[] surNameRandom = {"Kowalski", "Robak", "Rogowski", "Chelmicki"};
@@ -64,4 +67,6 @@ public class Student {
                 "ClassName: " + className + "<br>" +
                 "RandomIndex: " + randomIndex;
     }
+
+
 }
