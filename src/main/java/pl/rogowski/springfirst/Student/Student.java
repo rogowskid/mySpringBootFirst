@@ -6,7 +6,7 @@ import java.util.Random;
 @Data
 public class Student {
 
-    private String[] nameRandom = {"Asia", "Kasia", "Daniel", "PatryK", "Michal"};
+    private String[] nameRandom = {"Asia", "Kasia", "Daniel", "Patryk", "Michal"};
     private String[] surNameRandom = {"Kowalski", "Robak", "Rogowski", "Chelmicki"};
     private String[] classNameRandom = {"3ID13", "3ID12", "3ID11"};
     private Random random;
@@ -29,10 +29,32 @@ public class Student {
 
     public Student createStudent()
     {
-        return new Student(nameRandom[random.nextInt(nameRandom.length)], surNameRandom[random.nextInt(surNameRandom.length)],
-                classNameRandom[random.nextInt(classNameRandom.length)], random.nextInt(1000));
+        String tempName = nameRandom[random.nextInt(nameRandom.length)];
+        String tempSurName = surNameRandom[random.nextInt(surNameRandom.length)];
+
+        if (tempName.charAt(tempName.length()-1) == 'a')
+        {
+            if(tempSurName.endsWith("i"))
+            {
+                tempSurName = tempSurName.substring(0, tempSurName.length()-1) + "a";
+
+            }
+        }
+
+        if(tempName.charAt(tempName.length()-1) != 'a')
+        {
+            if(tempSurName.endsWith("a"))
+            {
+                tempSurName = tempSurName.substring(0, tempSurName.length()-1) + "i";
+
+            }
+
+        }
+
+        return new Student(tempName, tempSurName, classNameRandom[random.nextInt(classNameRandom.length)], random.nextInt(1000));
 
     }
+
 
     @Override
     public String toString() {
