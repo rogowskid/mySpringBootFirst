@@ -20,7 +20,7 @@ public class HelloStudent {
             {
 
                 studentBook.addStudent();
-                return studentBook.getStudentBooks().toString();
+                return studentBook.getStudent().toString();
             }
 
 

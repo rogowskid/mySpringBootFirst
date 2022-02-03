@@ -26,7 +26,7 @@ public class StudentBook {
         studentBooks.add(student.createStudent());
     }
 
-    public LinkedList<Student> getStudentBooks() {
+    public LinkedList<Student> getStudent() {
         return studentBooks;
     }
 

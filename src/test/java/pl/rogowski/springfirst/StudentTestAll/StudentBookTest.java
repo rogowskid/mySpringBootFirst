@@ -14,13 +14,7 @@ public class StudentBookTest {
 
     @Autowired
     StudentBook studentBook;
-    @Test
-    public void validCreateStudent()
-    {
-        Student student = new Student("Daniel", "Kowalski", "3ID13", 4231);
 
-        assertNotNull(student);
-    }
 
     @Test
     public void validAddStudent()
@@ -28,7 +22,7 @@ public class StudentBookTest {
 
         studentBook.addStudent();
 
-        assertNotNull(studentBook.getStudentBooks());
+        assertNotNull(studentBook.getStudent());
 
     }
 
